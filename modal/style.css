@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* 规定从父元素继承box-sizing属性的值 */
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  /* 为元素设定的宽度和高度决定了元素的边框盒 
+  就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+   通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+*/
+}
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.5;
+  height: 100vh;
+  /* vh视窗高度的百分比 */
+  position: relative;
+  display: flex;
+  /* align-items: center; */
+  /* 元素在侧轴居中。若元素在侧轴上的高度高于容器，那么在两个方向上的溢出距离相同 */
+  align-items: flex-start;
+  /* 元素向侧轴起点对齐 */
+  justify-content: center;
+  /* 其子元素的整体位置在主轴的中心位置 */
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+}
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 1.8rem;
+}
+
+/* ------------------------------ */
+
+/*   CLASSES TO MAKE MODAL WORK   */
+.hidden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
